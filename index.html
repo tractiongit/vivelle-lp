@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clínica Vivelle – Onde saúde, autoestima e bem-estar se encontram com excelência.</title>
+  <meta name="description" content="Clínica Vivelle em Jaraguá do Sul. Odontologia avançada, estética facial, estética corporal e saúde com atendimento humano e tecnologia de ponta.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    /*
+      Identidade Visual Vivelle
+      Paleta oficial extraída do Manual da Marca:
+      - Verde oliva escuro: #3f4530 (PANTONE 553C)
+      - Verde oliva:       #5d683d (PANTONE 371C)
+      - Sage:              #c1c59d (PANTONE 580C)
+      - Bege/dourado:      #edd99f (PANTONE 7506C)
+      - Dourado:           #c69f44 (PANTONE 117C)
+      - Marrom:            #5e461a (PANTONE 161C)
+      Tipografia: Montserrat como alternativa web à Congenial Light/Thin.
+    */
+    :root {
+      --olive-dark: #3f4530;
+      --olive: #5d683d;
+      --sage: #c1c59d;
+      --sage-light: #E8EAD6;
+      --beige: #edd99f;
+      --gold: #c69f44;
+      --brown: #5e461a;
+      --cream: #F9F7F0;
+      --cream-warm: #F4F1E8;
+      --white: #FFFFFF;
+      --text: #3f4530;
+      --text-light: #5d683d;
+      --shadow: 0 10px 40px rgba(63, 69, 48, 0.10);
+      --radius: 16px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.7;
+    }
+
+    h1, h2, h3, .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      line-height: 1.2;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(249, 247, 240, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(193, 197, 157, 0.25);
+      padding: 16px 0;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 300;
+      letter-spacing: 5px;
+      color: var(--olive-dark);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      align-items: center;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--olive-dark);
+      color: var(--white);
+      box-shadow: 0 4px 20px rgba(63, 69, 48, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--brown);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--olive-dark);
+      border: 2px solid var(--olive-dark);
+    }
+
+    .btn-outline:hover {
+      background: var(--olive-dark);
+      color: var(--white);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--olive-dark);
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 140px 0 80px;
+      background: linear-gradient(135deg, var(--cream) 0%, var(--sage-light) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -10%;
+      right: -5%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(198, 159, 68, 0.14) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      max-width: 700px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-subtitle {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin-bottom: 24px;
+      border-left: 3px solid var(--gold);
+      padding-left: 12px;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      color: var(--olive-dark);
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-light);
+      margin-bottom: 40px;
+      max-width: 540px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-visual {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42%;
+      height: 70%;
+      border-radius: var(--radius) 0 0 var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: left center;
+    }
+
+    /* Sections general */
+    section {
+      padding: 100px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 64px;
+      position: relative;
+      padding-bottom: 24px;
+    }
+
+    .section-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--beige));
+      border-radius: 3px;
+    }
+
+    .section-tag {
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: 2.4rem;
+      color: var(--olive-dark);
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      color: var(--text-light);
+    }
+
+    /* About */
+    .about {
+      background: var(--olive-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about-content h2 {
+      font-size: 2.4rem;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .about-content p {
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 24px;
+    }
+
+    .about-content .values {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 28px 0 32px;
+    }
+
+    .about-content .value-tag {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      border: 1px solid rgba(237, 217, 159, 0.35);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .about-content .btn-primary {
+      background: var(--gold);
+      color: var(--olive-dark);
+    }
+
+    .about-content .btn-primary:hover {
+      background: var(--beige);
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(63, 69, 48, 0.12);
+    }
+
+    .service-icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--beige) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(198, 159, 68, 0.28);
+      color: var(--olive-dark);
+      font-size: 1.9rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      color: var(--olive-dark);
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+
+    /* Featured */
+    .featured {
+      background: var(--cream-warm);
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .featured-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s;
+    }
+
+    .featured-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .featured-image {
+      height: 240px;
+      overflow: hidden;
+    }
+
+    .featured-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .featured-card:hover .featured-image img {
+      transform: scale(1.05);
+    }
+
+    .featured-content {
+      padding: 32px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .featured-content h3 {
+      font-size: 1.5rem;
+      color: var(--olive-dark);
+      margin-bottom: 12px;
+    }
+
+    .featured-content p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    /* Contact */
+    .contact {
+      background: linear-gradient(135deg, var(--olive-dark) 0%, var(--olive) 100%);
+      color: var(--white);
+    }
+
+    .contact .section-title,
+    .contact .section-tag {
+      color: var(--white);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .contact-info h3 {
+      font-size: 1.4rem;
+      margin-bottom: 24px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .contact-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .contact-item a {
+      color: var(--white);
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      transition: border-color 0.3s;
+    }
+
+    .contact-item a:hover {
+      border-color: var(--white);
+    }
+
+    .map-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .map-links a {
+      background: rgba(255,255,255,0.12);
+      padding: 12px 20px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      border: 1px solid rgba(255,255,255,0.25);
+      transition: background 0.3s;
+    }
+
+    .map-links a:hover {
+      background: rgba(255,255,255,0.25);
+    }
+
+    .contact-cta {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: var(--radius);
+      padding: 48px;
+      text-align: center;
+    }
+
+    .contact-cta h3 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .contact-cta p {
+      margin-bottom: 28px;
+      opacity: 0.9;
+    }
+
+    .contact-cta .btn-primary {
+      background: var(--white);
+      color: var(--olive-dark);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    .contact-cta .btn-primary:hover {
+      background: var(--cream);
+    }
+
+    /* Team */
+    .team {
+      background: var(--cream);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+
+    .team-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+    }
+
+    .team-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(63, 69, 48, 0.12);
+    }
+
+    .team-photo {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .team-content {
+      padding: 28px 22px;
+    }
+
+    .team-name {
+      font-size: 1.15rem;
+      color: var(--olive-dark);
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+
+    .team-role {
+      font-size: 0.78rem;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 14px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .team-summary {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--olive-dark);
+      color: rgba(255,255,255,0.7);
+      padding: 40px 0;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    footer strong {
+      color: var(--white);
+    }
+
+    /* Mobile */
+    @media (max-width: 1024px) {
+      .hero-visual {
+        position: relative;
+        width: 100%;
+        height: 320px;
+        border-radius: var(--radius);
+        transform: none;
+        top: auto;
+        margin-top: 48px;
+      }
+
+      .hero {
+        flex-direction: column;
+        padding-top: 120px;
+      }
+
+      .hero-content {
+        max-width: 100%;
+      }
+
+      .services-grid,
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        flex-direction: column;
+        padding: 24px;
+        gap: 20px;
+        border-bottom: 1px solid rgba(193, 197, 157, 0.25);
+        display: none;
+        box-shadow: var(--shadow);
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      nav .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      section {
+        padding: 72px 0;
+      }
+
+      .section-title {
+        font-size: 1.9rem;
+      }
+
+      .about-grid,
+      .featured-grid,
+      .contact-grid,
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a href="#" class="logo">VIVELLE</a>
+      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+      <nav>
+        <ul>
+          <li><a href="#sobre">Sobre a Vivelle</a></li>
+          <li><a href="#equipe">Equipe</a></li>
+          <li><a href="#servicos">Nossos Serviços</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="http://wa.me/5547997020270" target="_blank" class="btn btn-primary">Agende sua consulta</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-subtitle">Odonto · Saúde · Estética</span>
+        <h1>Vivelle: onde saúde, autoestima e bem-estar se encontram com excelência.</h1>
+        <p>Tratamentos completos para realçar sua melhor versão, com atendimento humano, ético e genuinamente próximo.</p>
+        <div class="hero-btns">
+          <a href="http://wa.me/5547997020270" target="_blank" class="btn btn-primary">Agende sua consulta</a>
+          <a href="#servicos" class="btn btn-outline">Conheça nossos serviços</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="IMAGEMS/FACHADA-ajustada.jpg" alt="Fachada da Clínica Vivelle">
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="about">
+    <div class="container about-grid">
+      <div class="about-image">
+        <img src="IMAGEMS/Ambiente-ajustada.jpg" alt="Ambiente acolhedor de atendimento na Vivelle">
+      </div>
+      <div class="about-content">
+        <h2>Sobre a Vivelle</h2>
+        <p>Na Vivelle, cada atendimento é guiado por um propósito: transformar vidas por meio da saúde, autoestima e bem-estar. Com atendimento humano, ético e genuinamente próximo, aliamos tecnologia de ponta à atenção verdadeira para entregar resultados com significado.</p>
+        <p>Você é nossa prioridade! Agende uma consulta e descubra o que a Vivelle pode fazer por você.</p>
+        <div class="values">
+          <span class="value-tag">Ética</span>
+          <span class="value-tag">Acolhimento</span>
+          <span class="value-tag">Excelência</span>
+          <span class="value-tag">Simplicidade</span>
+          <span class="value-tag">Tecnologia acessível</span>
+          <span class="value-tag">Propósito</span>
+        </div>
+        <a href="http://wa.me/5547997020270" target="_blank" class="btn btn-primary">Agende uma consulta</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="equipe" class="team">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Nossa Equipe</span>
+        <h2 class="section-title">Quem cuida de você</h2>
+        <p class="section-desc">Profissionais experientes, dedicados e prontos para oferecer uma experiência de excelência em cada atendimento.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <img class="team-photo" src="IMAGEMS/Mariana.jpg" alt="Dr.ª Mariana Wulff">
+          <div class="team-content">
+            <div class="team-name">Dr.ª Mariana Wulff</div>
+            <div class="team-role">CRO/SC 11073</div>
+            <div class="team-summary">Cirurgiã-dentista especialista em Prótese Dentária e CEO da Vivelle. Há mais de 15 anos oferece atendimento técnico e humanizado.</div>
+          </div>
+        </div>
+        <div class="team-card">
+          <img class="team-photo" src="IMAGEMS/Thiago.jpg" alt="Dr. Thiago Lovatto">
+          <div class="team-content">
+            <div class="team-name">Dr. Thiago Lovatto</div>
+            <div class="team-role">CRO/SC 6067</div>
+            <div class="team-summary">Cirurgião-dentista especialista em Implantes e Prótese Dentária. Com 25 anos de experiência, une técnica, precisão e segurança em cada procedimento.</div>
+          </div>
+        </div>
+        <div class="team-card">
+          <img class="team-photo" src="IMAGEMS/Muriana.jpg" alt="Muriana Alves Ferreira">
+          <div class="team-content">
+            <div class="team-name">Muriana Alves Ferreira</div>
+            <div class="team-role">Esteticista e Cosmetóloga</div>
+            <div class="team-summary">Formada desde 2020, dedica-se aos cuidados faciais com protocolos personalizados que valorizam a beleza natural e a saúde da pele.</div>
+          </div>
+        </div>
+        <div class="team-card">
+          <img class="team-photo" src="IMAGEMS/Quiara.jpg" alt="Quiara Maria Brocardo">
+          <div class="team-content">
+            <div class="team-name">Quiara Maria Brocardo</div>
+            <div class="team-role">Esteticista e Massoterapeuta</div>
+            <div class="team-summary">Há 14 anos cuida da saúde e autoestima com protocolos faciais e corporais personalizados e um atendimento acolhedor.</div>
+          </div>
+        </div>
+        <div class="team-card">
+          <img class="team-photo" src="IMAGEMS/Jeniffer.jpg" alt="Jeniffer Ronchi">
+          <div class="team-content">
+            <div class="team-name">Jeniffer Ronchi</div>
+            <div class="team-role">CRO/SC 18670</div>
+            <div class="team-summary">Cirurgiã-dentista especialista em Endodontia. Realiza tratamentos de canal com técnica, precisão e cuidado humanizado.</div>
+          </div>
+        </div>
+        <div class="team-card">
+          <img class="team-photo" src="IMAGEMS/Kamila.jpg" alt="Dr.ª Kamila Vieira Velho">
+          <div class="team-content">
+            <div class="team-name">Dr.ª Kamila Vieira Velho</div>
+            <div class="team-role">CRBM-5 4504</div>
+            <div class="team-summary">Biomédica especializada em harmonização facial e tratamentos injetáveis, com foco em resultados naturais, elegantes e personalizados.</div>
+          </div>
+        </div>
+        <div class="team-card">
+          <img class="team-photo" src="IMAGEMS/Gabriella.jpg" alt="Gabriella Stein">
+          <div class="team-content">
+            <div class="team-name">Gabriella Stein</div>
+            <div class="team-role">CRO/SC 18676</div>
+            <div class="team-summary">Cirurgiã-dentista especialista em Harmonização Facial full face. Atua com ácido hialurônico, toxina botulínica e bioestimuladores.</div>
+          </div>
+        </div>
+        <div class="team-card">
+          <img class="team-photo" src="IMAGEMS/Jhenefen.jpg" alt="Dr.ª Jhenefen Rita Tonelo">
+          <div class="team-content">
+            <div class="team-name">Dr.ª Jhenefen Rita Tonelo</div>
+            <div class="team-role">CRO/SC 18769</div>
+            <div class="team-summary">Cirurgiã-dentista especialista em Ortodontia. Atua com Invisalign, aparelhos autoligados, estéticos e convencionais.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Nossos Serviços</span>
+        <h2 class="section-title">Tratamentos completos para realçar sua melhor versão</h2>
+        <p class="section-desc">Oferecemos uma experiência integrada de cuidado, unindo saúde, estética e bem-estar em um só lugar.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="ph ph-tooth"></i></div>
+          <h3>Odontologia Avançada</h3>
+          <p>Sorria com confiança! Oferecemos tratamentos odontológicos modernos para restaurar sua saúde bucal e realçar sua beleza natural.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="ph ph-sparkle"></i></div>
+          <h3>Estética Facial</h3>
+          <p>Cuidar da beleza é um gesto de amor próprio. Com tecnologia de ponta e protocolos personalizados, realçamos a sua beleza de forma harmoniosa e natural.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="ph ph-leaf"></i></div>
+          <h3>Estética Corporal</h3>
+          <p>Seu corpo merece cuidado e atenção. Com técnicas inovadoras, promovemos contorno, firmeza e bem-estar, valorizando suas curvas e sua autoestima.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="ph ph-heartbeat"></i></div>
+          <h3>Saúde</h3>
+          <p>Na Vivelle, a saúde une ciência, experiência e olhar humano para cuidar de você de forma integrada e personalizada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Técnicas mais procuradas</span>
+        <h2 class="section-title">Procedimentos de destaque</h2>
+      </div>
+      <div class="featured-grid">
+        <div class="featured-card">
+          <div class="featured-image">
+            <img src="https://images.unsplash.com/photo-1519692933481-e162a57d6721?auto=format&fit=crop&w=800&q=80" alt="Depilação a laser">
+          </div>
+          <div class="featured-content">
+            <h3>Pele lisa, toque de sofisticação.</h3>
+            <p>A solução definitiva para a remoção dos pelos com conforto, segurança e tecnologia de última geração. Resultados duradouros que valorizam sua rotina.</p>
+          </div>
+        </div>
+        <div class="featured-card">
+          <div class="featured-image">
+            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80" alt="Prótese dentária">
+          </div>
+          <div class="featured-content">
+            <h3>Sorria com segurança e naturalidade.</h3>
+            <p>A solução ideal para quem busca uma prótese fixa, com estética perfeita e estabilidade incomparável.</p>
+          </div>
+        </div>
+        <div class="featured-card">
+          <div class="featured-image">
+            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80" alt="Criolipólise">
+          </div>
+          <div class="featured-content">
+            <h3>Redefina suas curvas com precisão.</h3>
+            <p>Tratamento não invasivo que utiliza o frio de forma estratégica para eliminar gordura localizada, com protocolos pensados para o seu corpo.</p>
+          </div>
+        </div>
+        <div class="featured-card">
+          <div class="featured-image">
+            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80" alt="Lifting não cirúrgico">
+          </div>
+          <div class="featured-content">
+            <h3>Lifting sem cirurgia, resultados reais.</h3>
+            <p>Tecnologia que estimula o colágeno e redefine contornos faciais e corporais com precisão e eficácia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Contato</span>
+        <h2 class="section-title">Sua transformação começa agora!</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Contato e horários:</h3>
+          <div class="contact-item">
+            <span>📍</span>
+            <div>
+              <strong>Onde estamos</strong>
+              Rua Feliciano Bortolini, 1203<br>
+              Barra do Rio Cerro – Jaraguá do Sul – SC
+            </div>
+          </div>
+          <div class="contact-item">
+            <span>🕒</span>
+            <div>
+              <strong>Horário de Funcionamento</strong>
+              Segunda a Sexta: 08h às 19h
+            </div>
+          </div>
+          <div class="contact-item">
+            <span>✉️</span>
+            <div>
+              <strong>E-mail</strong>
+              <a href="mailto:atendimento@clinicavivelle.com.br">atendimento@clinicavivelle.com.br</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span>📱</span>
+            <div>
+              <strong>Telefone / WhatsApp</strong>
+              <a href="http://wa.me/5547997020270" target="_blank">47 99702-0270</a>
+            </div>
+          </div>
+          <div class="map-links">
+            <a href="https://waze.com/ul?ll=-26.513490,-49.117571&navigate=yes" target="_blank">Ir com Waze</a>
+            <a href="https://m.uber.com/ul/?action=setPickup&dropoff%5Blatitude%5D=-26.513490&dropoff%5Blongitude%5D=-49.117571&dropoff%5Bnickname%5D=Rua+Feliciano+Bortolini+1203" target="_blank">Ir com Uber</a>
+          </div>
+        </div>
+        <div class="contact-cta">
+          <h3>Agende sua consulta pelo WhatsApp</h3>
+          <p>Dê o primeiro passo para cuidar de você com excelência. Nossa equipe está pronta para te acolher.</p>
+          <a href="http://wa.me/5547997020270" target="_blank" class="btn btn-primary">Falar no WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p><strong>VIVELLE</strong> — Clínica de Saúde & Estética</p>
+      <p>Rua Feliciano Bortolini, 1203 — Jaraguá do Sul/SC</p>
+      <p style="margin-top: 12px; opacity: 0.6;">© 2026 Clínica Vivelle. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navUl = document.querySelector('nav ul');
+
+    menuToggle.addEventListener('click', () => {
+      navUl.classList.toggle('active');
+      menuToggle.textContent = navUl.classList.contains('active') ? '✕' : '☰';
+    });
+
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        navUl.classList.remove('active');
+        menuToggle.textContent = '☰';
+      });
+    });
+  </script>
+
+</body>
+</html>
