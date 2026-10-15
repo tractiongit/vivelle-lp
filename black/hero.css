@@ -1,0 +1,71 @@
+/* Approved visual exploration, implemented with independent accessible HTML. */
+header{position:relative;z-index:6;height:106px;background:linear-gradient(105deg,#252b20,#363d28 75%,#252b20);border-bottom:1px solid #c69f445c;padding-inline:max(48px,calc((100vw - 1320px)/2));}
+header .brand img{width:224px}header nav{font-size:16px;gap:42px}header .header-contact{border:1px solid var(--beige);border-radius:40px;padding:11px 24px;font-size:15px;color:var(--beige)}
+.menu-button{display:none}
+.hero{position:relative;isolation:isolate;display:block;min-height:0;background:#252b20;overflow:hidden;color:#f9f7f0;}
+.hero-art{position:absolute;inset:0;z-index:-2;display:block;}
+.hero-art img{width:100%;height:100%;object-fit:cover;object-position:center center;}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#252b204d,transparent 70%);pointer-events:none;}
+.hero-copy{padding:64px max(48px,calc((100vw - 1320px)/2)) 60px;display:block;}
+.hero .eyebrow{font-size:12px;letter-spacing:3.1px;gap:24px;max-width:none;}
+.hero .small-line{width:52px;flex-shrink:0;}
+.hero h1{font-size:clamp(94px,8.5vw,132px);line-height:.95;letter-spacing:-3.5px;margin:30px 0 28px;width:48%;}
+.hero-description{font-size:23px;line-height:1.5;max-width:47%;margin-bottom:28px;color:#e3dfc6;}
+.hero .button{border-radius:40px;background:linear-gradient(105deg,#edd99f,#ddbd74);min-width:320px;min-height:58px;font-size:18px;padding:16px 30px;}
+.hero .button:hover{background:var(--beige);}
+.hero-whatsapp-note{font-size:14px;font-weight:200;color:var(--sage);letter-spacing:.4px;margin:10px 0 0 3px;}
+.hero-footnote{margin:0;padding:23px max(48px,calc((100vw - 1320px)/2));border-top:1px solid #c69f445c;display:flex;align-items:center;justify-content:space-between;gap:20px;color:#e3dfc6;background:#252b2040;font-size:12px;letter-spacing:1.8px;}
+.hero-footnote>span:nth-child(2){font-size:15px;font-weight:200;letter-spacing:.4px;}
+.hero .hero-explore{margin:0;padding:0;font-size:14px;letter-spacing:.4px;color:#e3dfc6;min-height:44px;}
+@media(min-width:1800px){.hero-copy{padding-top:80px;padding-bottom:80px}.hero-art img{object-position:center 40%;}.hero h1{font-size:140px;}.hero-description{font-size:25px;}}
+@media(min-width:761px) and (max-width:1100px){header{padding-inline:32px;}header .brand img{width:180px;}header nav{gap:22px;font-size:14px;}header .header-contact{font-size:12px;padding:10px 16px;}.hero-copy{padding:46px 32px 48px;}.hero h1{font-size:clamp(76px,9.2vw,100px);}.hero-description{font-size:19px;max-width:49%;}.hero .eyebrow{font-size:10px;letter-spacing:1.9px;gap:15px;}.hero .small-line{width:28px;}.hero .button{min-width:285px;font-size:16px;}.hero-whatsapp-note{font-size:11px;}.hero-footnote{padding:15px 32px;gap:12px;font-size:10px;letter-spacing:.7px;}.hero-footnote>span:nth-child(2){font-size:12px;}.hero .hero-explore{font-size:12px;}.hero::before{background:linear-gradient(90deg,#252b20a6,transparent 75%);}}
+@media(max-width:760px){
+  header{height:88px;padding:14px 24px;background:#252b20;}
+  header .brand img{width:170px;}header .header-contact{display:none;}
+  .menu-button{display:flex;flex-direction:column;justify-content:center;gap:6px;width:48px;height:48px;padding:9px;border:0;background:transparent;color:var(--beige);cursor:pointer;}
+  .menu-button span{display:block;width:28px;height:1px;background:currentColor;transition:transform .2s,opacity .2s;}
+  .menu-button[aria-expanded="true"] span:first-child{transform:translateY(7px) rotate(45deg);}.menu-button[aria-expanded="true"] span:nth-child(2){opacity:0;}.menu-button[aria-expanded="true"] span:last-child{transform:translateY(-7px) rotate(-45deg);}
+  .menu-button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+  header nav{display:none;position:absolute;top:100%;left:0;right:0;background:#252b20;padding:20px 24px;border-bottom:1px solid #c69f4460;box-shadow:0 16px 25px #0003;gap:0;}
+  header nav.is-open{display:flex;flex-direction:column;}header nav a{padding:13px 0;min-height:48px;}
+  .hero-art{top:55px;bottom:auto;height:auto;aspect-ratio:3/4;}
+  .hero-art img{height:100%;object-fit:cover;object-position:center top;}
+  .hero::before{background:linear-gradient(180deg,#252b20 25px,transparent 160px),linear-gradient(180deg,transparent 330px,#252b202b 440px,#252b20 650px);}
+  .hero-copy{padding:30px 24px 28px;}
+  .hero .eyebrow{font-size:10px;letter-spacing:2.1px;gap:12px;}
+  .hero .small-line{width:28px;}
+  .hero h1{width:auto;font-size:clamp(70px,19vw,108px);line-height:.98;letter-spacing:-2.3px;margin:clamp(255px,70vw,470px) 0 26px;}
+  .hero-description{max-width:none;font-size:18px;line-height:1.55;margin-bottom:25px;}
+  .hero .button{width:100%;max-width:none;min-width:0;font-size:17px;min-height:56px;padding:15px 24px;}
+  .hero-whatsapp-note{text-align:center;font-size:12px;margin:12px 0 0;letter-spacing:0;}
+  .hero-footnote{padding:20px 24px 26px;display:flex;flex-direction:column;gap:9px;text-align:center;background:#252b20;}
+  .hero-footnote>span:first-child{display:none;}.hero-footnote>span:nth-child(2){font-size:14px;}.hero .hero-explore{font-size:12px;min-height:44px;}
+  .mobile-cta{transition:transform .2s;}.mobile-cta.hero-visible{transform:translateY(120%);pointer-events:none;visibility:hidden;}
+}
+@media(max-width:360px){header{padding-inline:20px}.hero-copy{padding-inline:20px}.hero .eyebrow{font-size:9px;letter-spacing:1.5px}.hero h1{font-size:65px;margin-top:230px}.hero-description{font-size:16px}.hero .button{font-size:16px;padding-inline:21px}.hero-whatsapp-note{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.menu-button span,.mobile-cta{transition:none}}
+
+/* Campaign-first copy hierarchy. */
+.hero h1{font-size:clamp(86px,7.5vw,120px);letter-spacing:-2.7px;}
+.hero-offer{font-size:25px;font-weight:200;line-height:1.35;max-width:46%;color:var(--beige);margin-bottom:14px;}
+.hero-description{font-size:19px;max-width:40%;line-height:1.55;}
+.hero .button{font-size:17px;}
+@media(min-width:1800px){.hero h1{font-size:125px}.hero-offer{font-size:27px}.hero-description{font-size:21px}}
+@media(min-width:761px) and (max-width:1100px){.hero h1{font-size:clamp(65px,7.3vw,80px)}.hero-offer{font-size:21px;max-width:47%}.hero-description{font-size:17px;max-width:44%}.hero .button{font-size:14px;min-width:0;padding-inline:22px}}
+@media(max-width:760px){.hero h1{font-size:clamp(54px,14.5vw,95px);letter-spacing:-1.5px}.hero-offer{font-size:24px;max-width:none;margin-bottom:13px}.hero-description{font-size:17px;max-width:none}.hero .button{font-size:16px}}
+@media(max-width:360px){.hero h1{font-size:46px}.hero-offer{font-size:22px}.hero .button{font-size:14px;padding-inline:19px}}
+
+/* Simplified campaign copy and shared care CTA. */
+.care-cta{text-align:center;margin-top:32px}
+.care-cta .button{min-height:56px}
+@media(min-width:761px){.hero h1{margin-top:0}}
+@media(max-width:760px){.care-cta .button{width:100%;max-width:380px}}
+
+/* Open editorial campaign invitation. */
+.conditions{display:block;text-align:center;padding-block:100px;}
+.conditions>div{max-width:860px;margin-inline:auto;}
+.conditions .eyebrow{margin-inline:auto;}
+.conditions h2{max-width:800px;margin:20px auto 26px;text-wrap:balance;}
+.conditions>div>p:not(.eyebrow){max-width:690px;margin:0 auto 30px;}
+.conditions .button{min-height:56px;}
+@media(max-width:760px){.conditions{padding-block:62px;}.conditions h2{font-size:36px;}.conditions .button{width:100%;max-width:380px;}}
