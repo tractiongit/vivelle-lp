@@ -12,4 +12,11 @@
 .care-card .treatment-copy h3{font-size:34px;margin-bottom:18px;letter-spacing:-.7px;max-width:470px;text-wrap:balance}
 .treatment-copy>p:last-child{font-size:16px;line-height:1.7;color:var(--green)}
 .care-cta{margin-top:45px}
+.treatment-photo{position:relative;aspect-ratio:16/10;overflow:hidden;background:#e2e5d5;margin:0}
+.treatment-photo img{display:block;width:100%;height:100%;object-fit:cover}
+#criolipolise .treatment-photo img{object-position:50% 57%}
+#hi-focus .treatment-photo img{object-position:50% 100%}
+#preenchimento-labial .treatment-photo img{object-fit:contain}
+.treatment-photo figcaption{position:absolute;bottom:9px;right:9px;padding:3px 8px;background:#f9f7f0ed;color:var(--olive);font-size:10px;letter-spacing:.3px;line-height:1.6}
+.photo-direction-desire #preenchimento-labial .treatment-photo img{object-fit:cover}
 @media(max-width:760px){.treatments-heading{margin-bottom:32px}.treatments-heading h2{font-size:35px}.treatments-heading>p{font-size:16px}.care-grid{grid-template-columns:1fr;gap:35px}.care-card .treatment-copy h3{font-size:31px}.treatment-copy{padding:22px 0 0}.treatment-copy>p:last-child{font-size:15px}.care-cta{margin-top:34px}}
