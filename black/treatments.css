@@ -1,22 +1,19 @@
-/* Four treatments. Photo slots will receive the clinic-supplied assets. */
+/* A bounded card connects each promise, photo and treatment description. */
 .treatments-heading{max-width:750px;margin:0 auto 48px;text-align:center}
 .treatments-heading h2{font-size:clamp(34px,3.7vw,50px);text-wrap:balance}
 .treatments-heading>p{font-size:17px;color:var(--green);margin:22px auto 0;max-width:650px}
-.care-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;border:0}
-.care-grid .care-card,.care-grid .care-card+.care-card{padding:0;border:0;display:block;min-width:0}
-.treatment-photo-placeholder{aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;background:#e2e5d5;border:1px dashed #9da68b;color:var(--green)}
-.treatment-photo-placeholder span{font-size:11px;letter-spacing:1.8px;text-align:center;padding-inline:18px}
-.treatment-photo-placeholder small{font-size:13px;font-weight:200}
-.treatment-copy{padding:25px 4px 5px}
-.treatment-copy .treatment-name{font-size:11px;letter-spacing:2px;margin-bottom:14px;color:var(--green)}
-.care-card .treatment-copy h3{font-size:34px;margin-bottom:18px;letter-spacing:-.7px;max-width:470px;text-wrap:balance}
-.treatment-copy>p:last-child{font-size:16px;line-height:1.7;color:var(--green)}
-.care-cta{margin-top:45px}
-.treatment-photo{position:relative;aspect-ratio:16/10;overflow:hidden;background:#e2e5d5;margin:0}
+.care-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;border:0;align-items:stretch}
+.care-grid .care-card,.care-grid .care-card+.care-card{padding:26px;border:1px solid #b1b99f;border-radius:12px;background:#f9f7f099;display:flex;flex-direction:column;min-width:0}
+.care-card .treatment-tagline{font-size:31px;line-height:1.2;letter-spacing:-.6px;margin:0 0 22px;min-height:75px;display:flex;align-items:center;text-wrap:balance;max-width:470px}
+.treatment-photo{position:relative;aspect-ratio:16/9;overflow:hidden;background:#e2e5d5;margin:0;border-radius:5px;flex-shrink:0}
 .treatment-photo img{display:block;width:100%;height:100%;object-fit:cover}
 #criolipolise .treatment-photo img{object-position:50% 57%}
 #hi-focus .treatment-photo img{object-position:50% 100%}
 #preenchimento-labial .treatment-photo img{object-fit:contain}
 .treatment-photo figcaption{position:absolute;bottom:9px;right:9px;padding:3px 8px;background:#f9f7f0ed;color:var(--olive);font-size:10px;letter-spacing:.3px;line-height:1.6}
 .photo-direction-desire #preenchimento-labial .treatment-photo img{object-fit:cover}
-@media(max-width:760px){.treatments-heading{margin-bottom:32px}.treatments-heading h2{font-size:35px}.treatments-heading>p{font-size:16px}.care-grid{grid-template-columns:1fr;gap:35px}.care-card .treatment-copy h3{font-size:31px}.treatment-copy{padding:22px 0 0}.treatment-copy>p:last-child{font-size:15px}.care-cta{margin-top:34px}}
+.treatment-copy{padding:23px 0 0}
+.treatment-copy .treatment-name{font-size:23px;font-weight:200;line-height:1.3;letter-spacing:.7px;margin:0 0 13px;color:var(--olive)}
+.treatment-copy>p:last-child{font-size:16px;line-height:1.7;color:var(--green);margin:0}
+.care-cta{margin-top:40px}
+@media(max-width:760px){.treatments-heading{margin-bottom:32px}.treatments-heading h2{font-size:35px}.treatments-heading>p{font-size:16px}.care-grid{grid-template-columns:1fr;gap:22px}.care-grid .care-card,.care-grid .care-card+.care-card{padding:20px}.care-card .treatment-tagline{font-size:28px;min-height:0;margin-bottom:20px}.treatment-copy{padding-top:20px}.treatment-copy .treatment-name{font-size:21px;letter-spacing:.3px}.treatment-copy>p:last-child{font-size:15px}.care-cta{margin-top:32px}}
