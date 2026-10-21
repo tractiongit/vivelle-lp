@@ -1,0 +1,15 @@
+/* Four treatments. Photo slots will receive the clinic-supplied assets. */
+.treatments-heading{max-width:750px;margin:0 auto 48px;text-align:center}
+.treatments-heading h2{font-size:clamp(34px,3.7vw,50px);text-wrap:balance}
+.treatments-heading>p{font-size:17px;color:var(--green);margin:22px auto 0;max-width:650px}
+.care-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;border:0}
+.care-grid .care-card,.care-grid .care-card+.care-card{padding:0;border:0;display:block;min-width:0}
+.treatment-photo-placeholder{aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;background:#e2e5d5;border:1px dashed #9da68b;color:var(--green)}
+.treatment-photo-placeholder span{font-size:11px;letter-spacing:1.8px;text-align:center;padding-inline:18px}
+.treatment-photo-placeholder small{font-size:13px;font-weight:200}
+.treatment-copy{padding:25px 4px 5px}
+.treatment-copy .treatment-name{font-size:11px;letter-spacing:2px;margin-bottom:14px;color:var(--green)}
+.care-card .treatment-copy h3{font-size:34px;margin-bottom:18px;letter-spacing:-.7px;max-width:470px;text-wrap:balance}
+.treatment-copy>p:last-child{font-size:16px;line-height:1.7;color:var(--green)}
+.care-cta{margin-top:45px}
+@media(max-width:760px){.treatments-heading{margin-bottom:32px}.treatments-heading h2{font-size:35px}.treatments-heading>p{font-size:16px}.care-grid{grid-template-columns:1fr;gap:35px}.care-card .treatment-copy h3{font-size:31px}.treatment-copy{padding:22px 0 0}.treatment-copy>p:last-child{font-size:15px}.care-cta{margin-top:34px}}
