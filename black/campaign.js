@@ -21,10 +21,9 @@
     new IntersectionObserver(([entry]) => mobileCta.classList.toggle('hero-visible', entry.isIntersecting))
       .observe(document.querySelector('.hero'));
   }
-  const phone = '5547997020270'; // Confirmed on clinicavivelle.com.br, 14/10/2026.
-  const message = 'Olá, vim pela Black November Vivelle. Gostaria de mais informações.';
+  const whatsappUrl = 'https://go.pipelead.to/w/qMIo0K';
   document.querySelectorAll('[data-whatsapp]').forEach(link => {
-    link.href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    link.href = whatsappUrl;
     link.addEventListener('click', () => {
       // Local hook only. Never include treatment, message, phone, URL, or health data.
       // A click is not a Lead, Schedule, Purchase or confirmed conversation.
