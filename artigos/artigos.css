@@ -70,3 +70,9 @@ footer p { margin: 2px 0; }
   .content { padding: 45px 0 60px; }
   .cta { padding: 32px 22px; }
 }
+
+.article-overview { border-bottom: 1px solid var(--sage); padding: 24px 0 30px; }
+.article-overview h2 { margin: 0 0 12px; font-size: 1.1rem; }
+.article-overview ul { padding-left: 22px; margin: 0; }
+.article-overview li { margin: 8px 0; }
+.article h2[id] { scroll-margin-top: 115px; }

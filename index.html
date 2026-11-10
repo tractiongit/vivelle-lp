@@ -86,6 +86,11 @@
       margin: 0 auto;
     }
 
+    [id] { scroll-margin-top: 110px; }
+    .treatment-reading { margin-top: 18px; }
+    .treatment-reading a { text-decoration: underline; text-underline-offset: 3px; font-weight: 500; }
+    .treatment-reading a:hover, .treatment-reading a:focus-visible { color: var(--olive); }
+
     /* Header */
     header {
       position: fixed;
@@ -854,15 +859,17 @@
         <p class="section-desc">Oferecemos uma experiência integrada de cuidado, unindo saúde, estética e bem-estar em um só lugar.</p>
       </div>
       <div class="services-grid">
-        <div class="service-card">
+        <div class="service-card" id="odontologia">
           <div class="service-icon"><i class="ph ph-tooth"></i></div>
           <h3>Odontologia Avançada</h3>
           <p>Sorria com confiança! Oferecemos tratamentos odontológicos modernos para restaurar sua saúde bucal e realçar sua beleza natural.</p>
+          <p class="treatment-reading"><a href="/artigos/odontofobia">Medo de dentista? Entenda como começar com mais tranquilidade.</a></p>
         </div>
-        <div class="service-card">
+        <div class="service-card" id="estetica-facial">
           <div class="service-icon"><i class="ph ph-sparkle"></i></div>
           <h3>Estética Facial</h3>
           <p>Cuidar da beleza é um gesto de amor próprio. Com tecnologia de ponta e protocolos personalizados, realçamos a sua beleza de forma harmoniosa e natural.</p>
+          <p class="treatment-reading">Saiba mais sobre <a href="/artigos/botox-preventivo">toxina botulínica preventiva</a>, <a href="/artigos/bioestimuladores-de-colageno">bioestimuladores de colágeno</a> e <a href="/artigos/harmonizacao-facial-natural">harmonização facial natural</a>.</p>
         </div>
         <div class="service-card">
           <div class="service-icon"><i class="ph ph-leaf"></i></div>
@@ -885,22 +892,24 @@
         <h2 class="section-title">Cuidado especializado para o seu melhor sorriso e sua melhor versão</h2>
       </div>
       <div class="featured-grid">
-        <div class="featured-card">
+        <div class="featured-card" id="protese-protocolo">
           <div class="featured-image">
             <img src="IMAGEMS/protese-protocolo.jpg" alt="Paciente sorrindo após reabilitação com prótese protocolo">
           </div>
           <div class="featured-content">
             <h3>Próteses protocolo: segurança para voltar a sorrir.</h3>
             <p>Uma solução fixa, estável e personalizada para recuperar a função e a estética do seu sorriso com mais confiança no dia a dia.</p>
+            <p class="treatment-reading"><a href="/artigos/protese-protocolo">Como funciona a prótese protocolo e quais são os cuidados?</a></p>
           </div>
         </div>
-        <div class="featured-card">
+        <div class="featured-card" id="lentes-de-contato-dental">
           <div class="featured-image">
             <img src="IMAGEMS/lentes-contato.jpg" alt="Sorriso harmonioso com lentes de contato dental">
           </div>
           <div class="featured-content">
             <h3>Lentes de contato: um sorriso naturalmente harmonioso.</h3>
             <p>Planejamento cuidadoso e acabamento delicado para valorizar forma, cor e proporção dos seus dentes, respeitando a sua identidade.</p>
+            <p class="treatment-reading"><a href="/artigos/lentes-de-contato-dental">Lentes dentais: entenda a naturalidade e o desgaste dos dentes.</a></p>
           </div>
         </div>
         <div class="featured-card">
